@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-color:rgb(26, 26, 29);
+    --primary-color: #3B1C32
+    --secondary: #6A1E55;
+    --hailite:#FFE5AD;
+    --txt-color: #FBFBFB
+}
+
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--txt-color);
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    margin: 100px 0 20px;
+    text-align: center;
+    color: var(--hailite);
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+#container{
+    width: 700px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#input-txt{
+    box-sizing: border-box;
+    padding: 12px 20px;
+    background: none;
+    border: 2px solid #6A1E55;
+    border-radius: 1000px ;
+    width: 100%;
+    font:  inherit;
+    color: var(--txt-color);
+    caret-color: var(--hailite);
+}
+
+#input-txt:focus{
+    outline: #6A1E55;
+}
+
+form{
+    position: relative ;
+}
+
+#add_btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 31px;
+    height: 100%;
+    border-radius: 100px;
+    font-size: large;
+    font-weight: 600;
+    color: var(--bg-color);
+    background: #FFE5AD;
+    cursor: pointer;
+}
+
+ul li{
+    display: flex;
+    align-items: center;
+    padding: 0 13px;
+    background-color: #3B1C32;
+    margin-bottom: 10px;
+    border-radius: 13px;
+}
+
+li p{
+    padding: 15px;
+    padding-right: 0px;
+    display: flex;
+    flex-grow: 1;
+    transition: 0.4s;
+}
+
+.delete-btn{
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-btn svg{
+    transition: 0.4s;
+}
+
+.delete-btn:hover svg{
+    fill: red;
+}
+
+.edit-btn{
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-btn:hover{
+    transition:  0.4s;
+}
+
+.edit-btn:hover svg{
+    fill: rgb(105, 251, 110);
+}
+
+.custom-chkbox{
+    border: 1px solid var(--hailite);
+    border-radius: 50%;
+    cursor: pointer;
+    min-height: 20px;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transition: 0.4s ease;
+}
+
+input[type="checkbox"]:checked ~ .custom-chkbox{
+    background-color: var(--hailite);
+}
+
+input[type="checkbox"]:checked~ .custom-chkbox svg{
+    fill: #6A1E55;
+}
+
+input[type="checkbox"]:checked~ .todo-txt{
+    text-decoration:line-through;
+    color:#6A1E55;
+}
+
+input[type="checkbox"]{
+   visibility: hidden;
+}
